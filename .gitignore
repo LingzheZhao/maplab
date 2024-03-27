@@ -55,9 +55,14 @@ CMakeLists.txt.user
 .vscode/
 
 # Documentation
+docs/_build
 docs/build
 docs/doxyoutput
 docs/api
 
 # Docker
 docker_ctx/
+
+# outputs
+outputs/
+results/
