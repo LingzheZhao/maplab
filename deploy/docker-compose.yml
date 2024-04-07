@@ -6,6 +6,9 @@ services:
     build:
       context: ./docker_ctx
       dockerfile: ../Dockerfile
+      # args:
+      #     https_proxy: http://10.0.1.68:18889
+      #     http_proxy: http://10.0.1.68:18889
     runtime: nvidia
     environment:
       - DISPLAY=${DISPLAY}
