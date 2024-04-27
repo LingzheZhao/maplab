@@ -1,0 +1,9 @@
+label: /imu/data
+saturation_accel_max: 98.1
+saturation_gyro_max: 34.9
+gravity_magnitude: 9.81
+imu_sigmas:
+    acc_noise_density: 0.0008272154336452123
+    acc_bias_random_walk_noise_density: 4.191980470859817e-05
+    gyro_noise_density: 0.00014490739543710724
+    gyro_bias_random_walk_noise_density: 1e-4

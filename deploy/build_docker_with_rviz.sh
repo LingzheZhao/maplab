@@ -12,6 +12,6 @@ mkdir -p "${docker_ctx}"
 "$script_dir/copy_to_ctx.sh"
 
 # Build the docker image.
-docker-compose -f "${script_dir}/docker-compose.yml" build
+docker compose -f "${script_dir}/docker-compose.yml" build
 
 # We don't remove the context here as docker-compose requires it to be present.
