@@ -11,8 +11,7 @@ REST=$@
 rosrun rovioli rovioli \
   --alsologtostderr=1 \
   --v=2 \
-  --sensor_calibration_file=$NCAMERA_CALIBRATION  \
-  --imu_parameters_maplab=$IMU_PARAMETERS_MAPLAB \
+  --sensor_calibration_file=$NCAMERA_CALIBRATION \
   --datasource_type="rosbag" \
   --save_map_folder="$LOCALIZATION_MAP_OUTPUT" \
   --optimize_map_to_localization_map=false \
