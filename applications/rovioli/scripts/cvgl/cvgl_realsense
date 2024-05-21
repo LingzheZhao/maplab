@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+# Script to run ROVIOLI from a Euroc live data source (e.g., Euroc bag file with rosbag play).
+# Usage: tutorial_euroc <output save folder> [<additional rovioli flags>]
+
+LOCALIZATION_MAP_OUTPUT=$1
+
+ROVIO_CONFIG_DIR=/home/cvgluser/maplab_ws/src/maplab/applications/rovioli/share
+
+SENSORS_CALIBRATION="$ROVIO_CONFIG_DIR/cvgl-realsense.yaml"
+IMU_PARAMETERS_MAPLAB="$ROVIO_CONFIG_DIR/imu-realsense.yaml"
+IMU_PARAMETERS_ROVIO="$ROVIO_CONFIG_DIR/imu-realsense-sigmas-rovio.yaml"
+REST=$@
+
+rosrun rovioli rovioli \
+  --alsologtostderr=0 \
+  --v=0 \
+  --sensor_calibration_file=$SENSORS_CALIBRATION  \
+  --datasource_type="rostopic" \
+  --rovio_enable_frame_visualization=true \
+  --feature_tracker_visualize_keypoint_matches=true \
+  --rovioli_visualize_map=true \
+  --save_map_folder="$LOCALIZATION_MAP_OUTPUT" \
+  --map_builder_save_image_as_resources=false \
+  --external_imu_parameters_rovio=$IMU_PARAMETERS_ROVIO \
+  --rovio_active_camera_indices="0" \
+  --optimize_map_to_localization_map=false $REST

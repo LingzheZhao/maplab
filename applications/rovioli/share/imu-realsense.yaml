@@ -1,0 +1,9 @@
+label: /camera/imu
+saturation_accel_max: 39.24
+saturation_gyro_max: 17.4533
+gravity_magnitude: 9.81
+imu_sigmas:
+    acc_noise_density: 1.969773e-02
+    acc_bias_random_walk_noise_density: 8.2738e-04
+    gyro_noise_density: 1.763355e-03
+    gyro_bias_random_walk_noise_density: 1.715122552e-05

@@ -1,0 +1,81 @@
+sensors:
+  - id: c63aecb41bfdfd6b7e1fac37c7cbe7bf
+    topic: /camera/imu
+    description: "Intel Reansense D455"
+    sensor_type: IMU
+    sigmas:
+      acc_noise_density: 0.0008272154336452123
+      acc_bias_random_walk_noise_density: 4.191980470859817e-05
+      gyro_noise_density: 0.00014490739543710724
+      gyro_bias_random_walk_noise_density: 1e-4
+    saturation_accel_max_mps2: 98.1
+    saturation_gyro_max_radps: 34.9
+    gravity_magnitude_mps2: 9.81
+
+  - id: 098f6bcd4621d373cade4e832627b4f6
+    sensor_type: NCAMERA
+    description: "VISensor - Euroc - original_calibration"
+    topic: ""
+    cameras:
+    - camera:
+        topic: /camera/color
+        description: "D455"
+        id: 9be7b5000f15adb3c0da8ac6b729ee05
+        sensor_type: CAMERA
+        line-delay-nanoseconds: 0
+        image_height: 720
+        image_width: 1280
+        type: pinhole
+        intrinsics:
+          rows: 4
+          cols: 1
+          data: [641.727, 641.727, 639.480, 363.633]
+        distortion:
+          type: equidistant
+          parameters:
+            rows: 4
+            cols: 1
+            data: [0.0, 0.0, 0.0, 0.0]
+      T_B_C:
+        rows: 4
+        cols: 4
+        data: [-0.001203901818401465, -0.01993391777868414, 0.9998005748860143, 0.11654149477732728, -0.999995193374583, 0.0028806775849833377, -0.001146701522652227, 0.14620252026159924, -0.0028572448516582805, -0.9997971497352072, -0.01993729001679112, 0.019274548401859395, 0.0, 0.0, 0.0, 1.0]
+  - id: aabb23479caf7592b35518478a2fe08f
+    sensor_type: ODOMETRY_6DOF
+    description: "ROVIOLI in Odometry mode"
+    topic: /maplab_odom_T_M_I
+
+extrinsics:
+  - sensor_id: c63aecb41bfdfd6b7e1fac37c7cbe7bf
+    base_sensor_id: c63aecb41bfdfd6b7e1fac37c7cbe7bf
+    T_B_S:
+      rows: 4
+      cols: 4
+      data:
+        - [1,0,0,0]
+        - [0,1,0,0]
+        - [0,0,1,0]
+        - [0,0,0,1]
+
+  - sensor_id: 098f6bcd4621d373cade4e832627b4f6
+    base_sensor_id: c63aecb41bfdfd6b7e1fac37c7cbe7bf
+    T_B_S:
+      rows: 4
+      cols: 4
+      data:
+        - [1,0,0,0]
+        - [0,1,0,0]
+        - [0,0,1,0]
+        - [0,0,0,1]
+
+  - sensor_id: aabb23479caf7592b35518478a2fe08f
+    base_sensor_id: c63aecb41bfdfd6b7e1fac37c7cbe7bf
+    T_B_S:
+      rows: 4
+      cols: 4
+      data:
+        - [1,0,0,0]
+        - [0,1,0,0]
+        - [0,0,1,0]
+        - [0,0,0,1]
+
